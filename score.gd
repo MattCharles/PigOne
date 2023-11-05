@@ -1,5 +1,7 @@
 extends Control
 
+class_name ScoreDisplay
+
 @onready var score_bar : ScoreBar = $"../ScoreBar"
 @onready var score_value := $HBoxContainer/ScoreValue
 var texture_progress_bar : TextureProgressBar
