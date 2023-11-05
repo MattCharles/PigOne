@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=22 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://daswanfwodgaa" path="res://Images/ProgressBar/BarV7_ProgressBar.png" id="9_2oii2"]
 [ext_resource type="Script" path="res://score.gd" id="11_afasc"]
 [ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="11_yre4i"]
+[ext_resource type="FontFile" uid="uid://baeymqcpjqyhx" path="res://Fonts/buddychampionexpandital.ttf" id="12_61d4l"]
+[ext_resource type="FontFile" uid="uid://5qcsqc2qyog1" path="res://Fonts/buddychampionboldital.ttf" id="14_31nlj"]
+[ext_resource type="Script" path="res://countdown.gd" id="14_oq73b"]
+[ext_resource type="Texture2D" uid="uid://di81qcv7t5uga" path="res://Images/ProgressBar/BarV6_Bar.png" id="15_pcq5f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
 shader = ExtResource("2_itwhi")
@@ -52,6 +56,17 @@ sky_material = SubResource("ShaderMaterial_msgkm")
 background_mode = 2
 sky = SubResource("Sky_q13r3")
 ambient_light_source = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36jyd"]
+texture = ExtResource("15_pcq5f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq605"]
+bg_color = Color(0.619608, 0.470588, 0.239216, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.211765, 0.156863, 0.0745098, 1)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_awq8r")
@@ -116,14 +131,13 @@ offset_right = 7.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 50.0
 allow_greater = true
 nine_patch_stretch = true
 texture_under = ExtResource("7_1tsh8")
 texture_over = ExtResource("8_b4xvj")
 texture_progress = ExtResource("9_2oii2")
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="ScoreDisplay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
@@ -133,7 +147,7 @@ offset_right = 447.0
 grow_horizontal = 2
 script = ExtResource("11_afasc")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScoreDisplay"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -144,18 +158,64 @@ offset_right = 202.0
 offset_bottom = 171.0
 grow_horizontal = 2
 
-[node name="ScoreText" type="Label" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="ScoreText" type="Label" parent="CanvasLayer/ScoreDisplay/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
 theme_override_font_sizes/font_size = 96
 text = "SCORE: "
 
-[node name="ScoreValue" type="Label" parent="CanvasLayer/Control/HBoxContainer"]
+[node name="ScoreValue" type="Label" parent="CanvasLayer/ScoreDisplay/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
 theme_override_font_sizes/font_size = 96
 text = "$"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ScoreDisplay"]
 z_index = -1
 position = Vector2(0, 107)
 scale = Vector2(1.81193, 1.81193)
 texture = ExtResource("11_yre4i")
+
+[node name="Countdown" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -42.0
+offset_right = -7.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("14_oq73b")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Countdown"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_31nlj")
+theme_override_font_sizes/font_size = 54
+theme_override_styles/background = SubResource("StyleBoxTexture_36jyd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iq605")
+max_value = 2.0
+step = 0.1
+value = 2.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Countdown"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 54
+text = "TIME!"
+horizontal_alignment = 1
