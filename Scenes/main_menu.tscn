@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c2x1vf5wh7hr8"]
+[gd_scene load_steps=20 format=3 uid="uid://c2x1vf5wh7hr8"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_arqt2"]
 [ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://Images/UI board Large  stone.png" id="2_lxddo"]
@@ -9,7 +9,6 @@
 [ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="7_kp3us"]
 [ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="8_2q2wb"]
 [ext_resource type="FontFile" uid="uid://cs63ql10bief" path="res://Fonts/buddychampionrotate.ttf" id="9_cvlqq"]
-[ext_resource type="AudioStream" uid="uid://bqjmrsjsqc5wt" path="res://Sounds/Crash Bandicoot 1 Theme.wav" id="10_s0p2k"]
 [ext_resource type="AudioStream" uid="uid://bn1tn2a2e7jdv" path="res://Sounds/oink1.wav" id="11_m6i5v"]
 [ext_resource type="AudioStream" uid="uid://bt7suxliafnwu" path="res://Sounds/oink2.wav" id="12_4dtrn"]
 [ext_resource type="AudioStream" uid="uid://05qki6htr1km" path="res://Sounds/oink3.wav" id="13_qk5qn"]
@@ -177,7 +176,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_s0p2k")
 autoplay = true
 
 [node name="Oinker" type="AudioStreamPlayer" parent="."]

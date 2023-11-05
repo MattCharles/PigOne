@@ -4,5 +4,5 @@ extends Node3D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	rotate_y(rotation_speed)

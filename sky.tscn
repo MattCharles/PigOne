@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=16 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
@@ -6,6 +6,12 @@
 [ext_resource type="Script" path="res://orbit.gd" id="4_8odkc"]
 [ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="4_aumol"]
 [ext_resource type="Script" path="res://yoyo.gd" id="6_i6nqx"]
+[ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
+[ext_resource type="Script" path="res://score_bar.gd" id="7_vlgkg"]
+[ext_resource type="Texture2D" uid="uid://bm118i8x8g4xg" path="res://Images/ProgressBar/BarV7_ProgressBarBorder.png" id="8_b4xvj"]
+[ext_resource type="Texture2D" uid="uid://daswanfwodgaa" path="res://Images/ProgressBar/BarV7_ProgressBar.png" id="9_2oii2"]
+[ext_resource type="Script" path="res://score.gd" id="11_afasc"]
+[ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="11_yre4i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
 shader = ExtResource("2_itwhi")
@@ -87,3 +93,69 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.205636, 
 script = ExtResource("6_i6nqx")
 speed = 0.5
 default_distance = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreBar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.00885417
+anchor_top = 0.0157407
+anchor_right = 0.336979
+anchor_bottom = 0.0712963
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_vlgkg")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/ScoreBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 7.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+allow_greater = true
+nine_patch_stretch = true
+texture_under = ExtResource("7_1tsh8")
+texture_over = ExtResource("8_b4xvj")
+texture_progress = ExtResource("9_2oii2")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 447.0
+offset_right = 447.0
+grow_horizontal = 2
+script = ExtResource("11_afasc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 36.0
+offset_right = 202.0
+offset_bottom = 171.0
+grow_horizontal = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "SCORE: "
+
+[node name="ScoreValue" type="Label" parent="CanvasLayer/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "$"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control"]
+z_index = -1
+position = Vector2(0, 107)
+scale = Vector2(1.81193, 1.81193)
+texture = ExtResource("11_yre4i")
