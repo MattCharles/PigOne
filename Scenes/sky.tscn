@@ -1,29 +1,26 @@
-[gd_scene load_steps=32 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=29 format=3 uid="uid://bjjceeyq3csc3"]
 
-[ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
+[ext_resource type="Script" path="res://Scripts/sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
 [ext_resource type="Texture2D" uid="uid://bywxftcwg7x3i" path="res://stars.png" id="3_yetut"]
-[ext_resource type="Script" path="res://orbit.gd" id="4_8odkc"]
+[ext_resource type="Script" path="res://Scripts/orbit.gd" id="4_8odkc"]
 [ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="4_aumol"]
-[ext_resource type="Script" path="res://yoyo.gd" id="6_i6nqx"]
+[ext_resource type="Script" path="res://Scripts/yoyo.gd" id="6_i6nqx"]
 [ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
-[ext_resource type="Script" path="res://score_bar.gd" id="7_vlgkg"]
+[ext_resource type="Script" path="res://Scripts/score_bar.gd" id="7_vlgkg"]
 [ext_resource type="Texture2D" uid="uid://bm118i8x8g4xg" path="res://Images/ProgressBar/BarV7_ProgressBarBorder.png" id="8_b4xvj"]
 [ext_resource type="Texture2D" uid="uid://daswanfwodgaa" path="res://Images/ProgressBar/BarV7_ProgressBar.png" id="9_2oii2"]
-[ext_resource type="Script" path="res://score.gd" id="11_afasc"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="11_afasc"]
 [ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="11_yre4i"]
 [ext_resource type="FontFile" uid="uid://baeymqcpjqyhx" path="res://Fonts/buddychampionexpandital.ttf" id="12_61d4l"]
 [ext_resource type="FontFile" uid="uid://5qcsqc2qyog1" path="res://Fonts/buddychampionboldital.ttf" id="14_31nlj"]
-[ext_resource type="Script" path="res://countdown.gd" id="14_oq73b"]
+[ext_resource type="Script" path="res://Scripts/countdown.gd" id="14_oq73b"]
 [ext_resource type="Texture2D" uid="uid://di81qcv7t5uga" path="res://Images/ProgressBar/BarV6_Bar.png" id="15_pcq5f"]
 [ext_resource type="Texture2D" uid="uid://da4qhsjwpagng" path="res://Images/UI board Small  stone.png" id="17_h4e2r"]
-[ext_resource type="Script" path="res://retry.gd" id="17_y4ifw"]
+[ext_resource type="Script" path="res://Scripts/retry.gd" id="17_y4ifw"]
 [ext_resource type="Texture2D" uid="uid://b8lgbr805nsf6" path="res://Images/UI board Small  parchment.png" id="18_p0c22"]
 [ext_resource type="FontFile" uid="uid://d155ohlqgqnrb" path="res://Fonts/buddychampionexpand.ttf" id="19_hk0af"]
-[ext_resource type="Texture2D" uid="uid://v0nsl7h20c4t" path="res://Images/TextBTN_Big.png" id="20_5ky1v"]
-[ext_resource type="Texture2D" uid="uid://b65mbochgeqv4" path="res://Images/TextBTN_Big_Pressed.png" id="21_vjgjh"]
-[ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="22_f8b87"]
-[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="23_gqjqd"]
+[ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://Scenes/big_button.tscn" id="25_lovbp"]
 [ext_resource type="PackedScene" uid="uid://gwt6s7gedqg1" path="res://Scenes/scoreboard.tscn" id="25_nur8i"]
 [ext_resource type="AudioStream" uid="uid://dxh5fij2g43jk" path="res://Sounds/Music/Farting Around.mp3" id="26_a6jae"]
 
@@ -277,29 +274,17 @@ theme_override_font_sizes/font_size = 84
 text = "TRY AGAIN?"
 horizontal_alignment = 1
 
-[node name="Yeah" type="TextureButton" parent="CanvasLayer/RetryMenu/Control"]
-layout_mode = 0
-offset_left = -245.0
-offset_top = -46.0
-offset_right = 93.0
-offset_bottom = 66.0
-texture_normal = ExtResource("20_5ky1v")
-texture_pressed = ExtResource("21_vjgjh")
-texture_hover = ExtResource("22_f8b87")
-
-[node name="Label" type="Label" parent="CanvasLayer/RetryMenu/Control/Yeah"]
+[node name="Yeah" parent="CanvasLayer/RetryMenu/Control" instance=ExtResource("25_lovbp")]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.985
-anchor_bottom = 0.474
-offset_top = 13.0
-offset_right = 0.0699768
-offset_bottom = 19.912
-theme_override_fonts/font = ExtResource("23_gqjqd")
-theme_override_font_sizes/font_size = 64
-text = "YEAH"
-horizontal_alignment = 1
-vertical_alignment = 1
+anchor_left = -6.3
+anchor_top = -1.3
+anchor_right = 2.15
+anchor_bottom = 1.5
+offset_right = 0.0
+offset_bottom = 0.0
+text = "Yeah"
+metadata/_edit_use_anchors_ = true
 
 [node name="Scoreboard" parent="CanvasLayer/RetryMenu" instance=ExtResource("25_nur8i")]
 layout_mode = 1
@@ -317,5 +302,4 @@ stream = ExtResource("26_a6jae")
 autoplay = true
 bus = &"Music"
 
-[connection signal="button_down" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_down"]
-[connection signal="button_up" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_up"]
+[connection signal="pressed" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_pressed"]

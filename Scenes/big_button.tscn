@@ -1,0 +1,68 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1l88v70ir6ui"]
+
+[ext_resource type="Texture2D" uid="uid://v0nsl7h20c4t" path="res://Images/TextBTN_Big.png" id="1_yr88d"]
+[ext_resource type="Texture2D" uid="uid://b65mbochgeqv4" path="res://Images/TextBTN_Big_Pressed.png" id="2_pkvoe"]
+[ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="3_x4tgo"]
+[ext_resource type="Script" path="res://Scripts/big_button.gd" id="4_n4j4n"]
+[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="5_5g5vx"]
+[ext_resource type="AudioStream" uid="uid://bn1tn2a2e7jdv" path="res://Sounds/oink1.wav" id="6_ypvbp"]
+[ext_resource type="AudioStream" uid="uid://bt7suxliafnwu" path="res://Sounds/oink2.wav" id="7_20sp1"]
+[ext_resource type="AudioStream" uid="uid://05qki6htr1km" path="res://Sounds/oink3.wav" id="8_g33mt"]
+[ext_resource type="AudioStream" uid="uid://dbhfggxb3plcw" path="res://Sounds/oink4.wav" id="9_2dbw8"]
+[ext_resource type="AudioStream" uid="uid://cyomk1bwwj21b" path="res://Sounds/oink5.wav" id="10_2pm0a"]
+[ext_resource type="AudioStream" uid="uid://dkp2johb8vcnc" path="res://Sounds/oink6.wav" id="11_jgqtl"]
+[ext_resource type="AudioStream" uid="uid://bjgrhwxbgopqr" path="res://Sounds/oink7.wav" id="12_gfhmh"]
+[ext_resource type="AudioStream" uid="uid://dvw66ibj15d40" path="res://Sounds/oink8.wav" id="13_44fl0"]
+[ext_resource type="AudioStream" uid="uid://biln2w7msr8jr" path="res://Sounds/oink9.wav" id="14_2heob"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_61seb"]
+streams_count = 9
+stream_0/stream = ExtResource("6_ypvbp")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_20sp1")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("8_g33mt")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("9_2dbw8")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("10_2pm0a")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("11_jgqtl")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("12_gfhmh")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("13_44fl0")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("14_2heob")
+stream_8/weight = 1.0
+
+[node name="big_button" type="TextureButton"]
+offset_right = 338.0
+offset_bottom = 112.0
+keep_pressed_outside = true
+texture_normal = ExtResource("1_yr88d")
+texture_pressed = ExtResource("2_pkvoe")
+texture_hover = ExtResource("3_x4tgo")
+script = ExtResource("4_n4j4n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5g5vx")
+theme_override_font_sizes/font_size = 54
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_61seb")
+bus = &"SFX"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
