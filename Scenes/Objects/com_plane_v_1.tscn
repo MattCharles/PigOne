@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://deoxe25rawot0"]
+
+[ext_resource type="PackedScene" uid="uid://d3a2ac7nshcih" path="res://Models/Planes/ComPlaneV1.fbx" id="1_mdg4u"]
+
+[node name="ComPlaneV1" instance=ExtResource("1_mdg4u")]
