@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=31 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://Scripts/sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
 [ext_resource type="Texture2D" uid="uid://bywxftcwg7x3i" path="res://stars.png" id="3_yetut"]
 [ext_resource type="Script" path="res://Scripts/orbit.gd" id="4_8odkc"]
 [ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="4_aumol"]
+[ext_resource type="Script" path="res://Scripts/pigGrowth.gd" id="5_7cp0y"]
 [ext_resource type="Script" path="res://Scripts/yoyo.gd" id="6_i6nqx"]
 [ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
 [ext_resource type="Script" path="res://Scripts/score_bar.gd" id="7_vlgkg"]
@@ -22,6 +23,7 @@
 [ext_resource type="FontFile" uid="uid://d155ohlqgqnrb" path="res://Fonts/buddychampionexpand.ttf" id="19_hk0af"]
 [ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://Scenes/big_button.tscn" id="25_lovbp"]
 [ext_resource type="PackedScene" uid="uid://gwt6s7gedqg1" path="res://Scenes/scoreboard.tscn" id="25_nur8i"]
+[ext_resource type="PackedScene" uid="uid://c3ltmahijxoi1" path="res://Scenes/PigHouse.tscn" id="25_qtf8n"]
 [ext_resource type="AudioStream" uid="uid://dxh5fij2g43jk" path="res://Sounds/Music/Farting Around.mp3" id="26_a6jae"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
@@ -105,6 +107,7 @@ directional_shadow_fade_start = 0.1
 
 [node name="pig" parent="." instance=ExtResource("4_aumol")]
 transform = Transform3D(1, 0, 0, 0, 0.999715, -0.0238564, 0, 0.0238564, 0.999715, 0, 2.5075, 4.73338)
+script = ExtResource("5_7cp0y")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123978, 3.36633, 4.75784)
@@ -299,7 +302,11 @@ grow_horizontal = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_a6jae")
+volume_db = -25.602
 autoplay = true
 bus = &"Music"
+
+[node name="Pigpen" parent="." instance=ExtResource("25_qtf8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.81657, 1, 12.6507)
 
 [connection signal="pressed" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_pressed"]
