@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=32 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="22_f8b87"]
 [ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="23_gqjqd"]
 [ext_resource type="PackedScene" uid="uid://gwt6s7gedqg1" path="res://Scenes/scoreboard.tscn" id="25_nur8i"]
+[ext_resource type="AudioStream" uid="uid://dxh5fij2g43jk" path="res://Sounds/Music/Farting Around.mp3" id="26_a6jae"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
 shader = ExtResource("2_itwhi")
@@ -310,6 +311,11 @@ offset_top = -1.0
 offset_right = -1547.12
 offset_bottom = -1.0
 grow_horizontal = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_a6jae")
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_down" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_down"]
 [connection signal="button_up" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_up"]
