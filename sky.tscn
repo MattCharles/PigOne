@@ -1,0 +1,315 @@
+[gd_scene load_steps=31 format=3 uid="uid://bjjceeyq3csc3"]
+
+[ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
+[ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
+[ext_resource type="Texture2D" uid="uid://bywxftcwg7x3i" path="res://stars.png" id="3_yetut"]
+[ext_resource type="Script" path="res://orbit.gd" id="4_8odkc"]
+[ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="4_aumol"]
+[ext_resource type="Script" path="res://yoyo.gd" id="6_i6nqx"]
+[ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
+[ext_resource type="Script" path="res://score_bar.gd" id="7_vlgkg"]
+[ext_resource type="Texture2D" uid="uid://bm118i8x8g4xg" path="res://Images/ProgressBar/BarV7_ProgressBarBorder.png" id="8_b4xvj"]
+[ext_resource type="Texture2D" uid="uid://daswanfwodgaa" path="res://Images/ProgressBar/BarV7_ProgressBar.png" id="9_2oii2"]
+[ext_resource type="Script" path="res://score.gd" id="11_afasc"]
+[ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="11_yre4i"]
+[ext_resource type="FontFile" uid="uid://baeymqcpjqyhx" path="res://Fonts/buddychampionexpandital.ttf" id="12_61d4l"]
+[ext_resource type="FontFile" uid="uid://5qcsqc2qyog1" path="res://Fonts/buddychampionboldital.ttf" id="14_31nlj"]
+[ext_resource type="Script" path="res://countdown.gd" id="14_oq73b"]
+[ext_resource type="Texture2D" uid="uid://di81qcv7t5uga" path="res://Images/ProgressBar/BarV6_Bar.png" id="15_pcq5f"]
+[ext_resource type="Texture2D" uid="uid://da4qhsjwpagng" path="res://Images/UI board Small  stone.png" id="17_h4e2r"]
+[ext_resource type="Script" path="res://retry.gd" id="17_y4ifw"]
+[ext_resource type="Texture2D" uid="uid://b8lgbr805nsf6" path="res://Images/UI board Small  parchment.png" id="18_p0c22"]
+[ext_resource type="FontFile" uid="uid://d155ohlqgqnrb" path="res://Fonts/buddychampionexpand.ttf" id="19_hk0af"]
+[ext_resource type="Texture2D" uid="uid://v0nsl7h20c4t" path="res://Images/TextBTN_Big.png" id="20_5ky1v"]
+[ext_resource type="Texture2D" uid="uid://b65mbochgeqv4" path="res://Images/TextBTN_Big_Pressed.png" id="21_vjgjh"]
+[ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="22_f8b87"]
+[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="23_gqjqd"]
+[ext_resource type="PackedScene" uid="uid://gwt6s7gedqg1" path="res://Scenes/scoreboard.tscn" id="25_nur8i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
+shader = ExtResource("2_itwhi")
+shader_parameter/day_top_color = Color(0.1, 0.6, 1, 1)
+shader_parameter/day_bottom_color = Color(0.4, 0.8, 1, 1)
+shader_parameter/sunset_top_color = Color(0.7, 0.75, 1, 1)
+shader_parameter/sunset_bottom_color = Color(1, 0.5, 0.7, 1)
+shader_parameter/night_top_color = Color(0.02, 0, 0.04, 1)
+shader_parameter/night_bottom_color = Color(0.1, 0, 0.2, 1)
+shader_parameter/horizon_color = Color(0, 0.7, 0.8, 1)
+shader_parameter/horizon_blur = 0.05
+shader_parameter/sun_color = Color(10, 8, 1, 1)
+shader_parameter/sun_sunset_color = Color(10, 0, 0, 1)
+shader_parameter/sun_size = 0.2
+shader_parameter/sun_blur = 10.0
+shader_parameter/moon_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/moon_size = 0.06
+shader_parameter/moon_blur = 0.1
+shader_parameter/clouds_edge_color = Color(0.8, 0.8, 0.98, 1)
+shader_parameter/clouds_top_color = Color(1, 1, 1, 1)
+shader_parameter/clouds_middle_color = Color(0.92, 0.92, 0.98, 1)
+shader_parameter/clouds_bottom_color = Color(0.83, 0.83, 0.94, 1)
+shader_parameter/clouds_speed = 2.0
+shader_parameter/clouds_direction = 0.2
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_cutoff = 0.3
+shader_parameter/clouds_fuzziness = 0.5
+shader_parameter/clouds_weight = 0.0
+shader_parameter/clouds_blur = 0.25
+shader_parameter/stars_speed = 1.0
+shader_parameter/stars_texture = ExtResource("3_yetut")
+shader_parameter/overwritten_time = 2400.0
+
+[sub_resource type="Sky" id="Sky_q13r3"]
+sky_material = SubResource("ShaderMaterial_msgkm")
+
+[sub_resource type="Environment" id="Environment_bh1jy"]
+background_mode = 2
+sky = SubResource("Sky_q13r3")
+ambient_light_source = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36jyd"]
+texture = ExtResource("15_pcq5f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq605"]
+bg_color = Color(0.619608, 0.470588, 0.239216, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.211765, 0.156863, 0.0745098, 1)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_awq8r")
+use_day_time_for_shader = true
+time_scale = 0.9929
+sun_base_enegry = 1.0
+moon_base_enegry = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bh1jy")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.920627, 0, -0.390445, -0.390445, -4.37114e-08, -0.920626, -1.70669e-08, 1, -4.02418e-08, 0, 0, 0)
+rotation_order = 4
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.75
+shadow_blur = 5.0
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.995978, 0, 0.0895896, 0.0189377, -0.977403, -0.210533, 0.0875651, 0.211383, -0.973473, 0, 0, 0)
+rotation_order = 4
+light_color = Color(1, 1, 0.6, 1)
+light_energy = 0.0
+shadow_enabled = true
+shadow_opacity = 0.25
+shadow_blur = 5.0
+directional_shadow_fade_start = 0.1
+
+[node name="pig" parent="." instance=ExtResource("4_aumol")]
+transform = Transform3D(1, 0, 0, 0, 0.999715, -0.0238564, 0, 0.0238564, 0.999715, 0, 2.5075, 4.73338)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123978, 3.36633, 4.75784)
+script = ExtResource("4_8odkc")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0.205636, -0.195468, 2.17232)
+script = ExtResource("6_i6nqx")
+speed = 0.5
+default_distance = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreBar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.00885417
+anchor_top = 0.0157407
+anchor_right = 0.336979
+anchor_bottom = 0.0712963
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_vlgkg")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/ScoreBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 7.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+allow_greater = true
+nine_patch_stretch = true
+texture_under = ExtResource("7_1tsh8")
+texture_over = ExtResource("8_b4xvj")
+texture_progress = ExtResource("9_2oii2")
+
+[node name="ScoreDisplay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 447.0
+offset_right = 447.0
+grow_horizontal = 2
+script = ExtResource("11_afasc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScoreDisplay"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 36.0
+offset_right = 202.0
+offset_bottom = 171.0
+grow_horizontal = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer/ScoreDisplay/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 96
+text = "SCORE: "
+
+[node name="ScoreValue" type="Label" parent="CanvasLayer/ScoreDisplay/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 96
+text = "$"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ScoreDisplay"]
+z_index = -1
+position = Vector2(0, 107)
+scale = Vector2(1.81193, 1.81193)
+texture = ExtResource("11_yre4i")
+
+[node name="Countdown" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -42.0
+offset_right = -7.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("14_oq73b")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Countdown"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_31nlj")
+theme_override_font_sizes/font_size = 54
+theme_override_styles/background = SubResource("StyleBoxTexture_36jyd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iq605")
+max_value = 2.0
+step = 0.1
+value = 2.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Countdown"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 54
+text = "TIME!"
+horizontal_alignment = 1
+
+[node name="RetryMenu" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("17_y4ifw")
+
+[node name="Control" type="Control" parent="CanvasLayer/RetryMenu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = 263.0
+offset_right = -309.0
+offset_bottom = 303.0
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/RetryMenu/Control"]
+position = Vector2(-86.3376, -34.75)
+scale = Vector2(1.23883, 1.23883)
+texture = ExtResource("17_h4e2r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/RetryMenu/Control"]
+position = Vector2(-87.6563, -33)
+scale = Vector2(1.25781, 1.25781)
+texture = ExtResource("18_p0c22")
+
+[node name="Label" type="Label" parent="CanvasLayer/RetryMenu/Control"]
+layout_mode = 0
+offset_left = -314.0
+offset_top = -139.0
+offset_right = 166.0
+offset_bottom = -51.0
+theme_override_fonts/font = ExtResource("19_hk0af")
+theme_override_font_sizes/font_size = 84
+text = "TRY AGAIN?"
+horizontal_alignment = 1
+
+[node name="Yeah" type="TextureButton" parent="CanvasLayer/RetryMenu/Control"]
+layout_mode = 0
+offset_left = -245.0
+offset_top = -46.0
+offset_right = 93.0
+offset_bottom = 66.0
+texture_normal = ExtResource("20_5ky1v")
+texture_pressed = ExtResource("21_vjgjh")
+texture_hover = ExtResource("22_f8b87")
+
+[node name="Label" type="Label" parent="CanvasLayer/RetryMenu/Control/Yeah"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.985
+anchor_bottom = 0.474
+offset_top = 13.0
+offset_right = 0.0699768
+offset_bottom = 19.912
+theme_override_fonts/font = ExtResource("23_gqjqd")
+theme_override_font_sizes/font_size = 64
+text = "YEAH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scoreboard" parent="CanvasLayer/RetryMenu" instance=ExtResource("25_nur8i")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.203
+anchor_right = 0.203
+offset_left = -1547.12
+offset_top = -1.0
+offset_right = -1547.12
+offset_bottom = -1.0
+grow_horizontal = 1
+
+[connection signal="button_down" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_down"]
+[connection signal="button_up" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_up"]

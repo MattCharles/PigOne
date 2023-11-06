@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://l3bl4bwp47a1"]
 
-[ext_resource type="PackedScene" uid="uid://cok4p8rk4htyt" path="res://Models/pig.glb" id="1_7iijx"]
+[ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="1_7iijx"]
 
 [node name="test" type="Node3D"]
 
