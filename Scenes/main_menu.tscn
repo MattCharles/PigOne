@@ -135,6 +135,25 @@ text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Credits" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_bia00")
+texture_pressed = ExtResource("5_k3k6p")
+texture_hover = ExtResource("6_rdqvm")
+
+[node name="Label" type="Label" parent="ButtonContainer/Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.985
+anchor_bottom = 0.474
+offset_right = 0.0699768
+offset_bottom = -0.00801086
+theme_override_fonts/font = ExtResource("7_kp3us")
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Exit" type="TextureButton" parent="ButtonContainer"]
 layout_mode = 2
 texture_normal = ExtResource("4_bia00")
@@ -193,6 +212,10 @@ bus = &"Music"
 [connection signal="button_down" from="ButtonContainer/Options" to="." method="_on_options_button_down"]
 [connection signal="button_up" from="ButtonContainer/Options" to="." method="_on_options_button_up"]
 [connection signal="mouse_entered" from="ButtonContainer/Options" to="." method="_on_button_entered"]
+[connection signal="button_down" from="ButtonContainer/Credits" to="." method="_on_credits_button_down"]
+[connection signal="button_up" from="ButtonContainer/Credits" to="." method="_on_credits_button_up"]
+[connection signal="mouse_entered" from="ButtonContainer/Credits" to="." method="_on_button_entered"]
+[connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="button_down" from="ButtonContainer/Exit" to="." method="_on_exit_button_down"]
 [connection signal="button_up" from="ButtonContainer/Exit" to="." method="_on_exit_button_up"]
 [connection signal="mouse_entered" from="ButtonContainer/Exit" to="." method="_on_button_entered"]
