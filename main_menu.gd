@@ -3,6 +3,7 @@ extends Control
 @onready var start_label := $ButtonContainer/Start/Label
 @onready var options_label := $ButtonContainer/Options/Label
 @onready var exit_label := $ButtonContainer/Exit/Label
+@onready var credits_label := $ButtonContainer/Credits/Label
 @onready var oinker := $Oinker
 @export var PRESS_OFFSET := Vector2(0.0, 20.0)
 
@@ -40,3 +41,15 @@ func _on_exit_button_up():
 
 func _on_button_entered():
 	oinker.play()
+
+
+func _on_credits_button_down():
+	move_button(credits_label, true)
+
+
+func _on_credits_button_up():
+	move_button(credits_label, false)
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
