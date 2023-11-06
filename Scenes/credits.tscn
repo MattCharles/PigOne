@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://nt2i2tukgrsx"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_u54dc"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_m08ck"]
 [ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://Images/UI board Large  stone.png" id="2_2jey8"]
 [ext_resource type="Texture2D" uid="uid://y0u768d3d1ja" path="res://Images/UI board Large  parchment.png" id="3_aiabe"]
 [ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://Scenes/big_button.tscn" id="4_cxtsh"]
@@ -18,7 +18,7 @@ offset_right = -1.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u54dc")
+script = ExtResource("1_m08ck")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2.08667, 1.74313)
