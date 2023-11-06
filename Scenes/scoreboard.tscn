@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://gwt6s7gedqg1"]
 
-[ext_resource type="Script" path="res://Scenes/scoreboard.gd" id="1_d50xy"]
 [ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://Images/UI board Large  stone.png" id="1_u26ko"]
+[ext_resource type="Script" path="res://Scripts/scoreboard.gd" id="1_xc863"]
 [ext_resource type="Texture2D" uid="uid://y0u768d3d1ja" path="res://Images/UI board Large  parchment.png" id="2_7yprn"]
 [ext_resource type="FontFile" uid="uid://bcgj2vvatyhmn" path="res://Fonts/buddychampionrotal.ttf" id="3_n465p"]
 
@@ -14,7 +14,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d50xy")
+script = ExtResource("1_xc863")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

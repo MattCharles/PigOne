@@ -1,45 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://nt2i2tukgrsx"]
+[gd_scene load_steps=8 format=3 uid="uid://nt2i2tukgrsx"]
 
-[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_u54dc"]
+[ext_resource type="Script" path="res://Scripts/credits.gd" id="1_m08ck"]
 [ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://Images/UI board Large  stone.png" id="2_2jey8"]
 [ext_resource type="Texture2D" uid="uid://y0u768d3d1ja" path="res://Images/UI board Large  parchment.png" id="3_aiabe"]
-[ext_resource type="Texture2D" uid="uid://v0nsl7h20c4t" path="res://Images/TextBTN_Big.png" id="4_7il5n"]
-[ext_resource type="Texture2D" uid="uid://b65mbochgeqv4" path="res://Images/TextBTN_Big_Pressed.png" id="5_dg8vt"]
-[ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="6_mbk0b"]
-[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="7_qnuyi"]
+[ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://Scenes/big_button.tscn" id="4_cxtsh"]
 [ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="8_03xr4"]
 [ext_resource type="FontFile" uid="uid://cs63ql10bief" path="res://Fonts/buddychampionrotate.ttf" id="9_a3rwh"]
 [ext_resource type="AudioStream" uid="uid://dcjr1dj27vm7c" path="res://Sounds/Music/Holiday Weasel.mp3" id="10_cv2ek"]
-[ext_resource type="AudioStream" uid="uid://bn1tn2a2e7jdv" path="res://Sounds/oink1.wav" id="11_8dld1"]
-[ext_resource type="AudioStream" uid="uid://bt7suxliafnwu" path="res://Sounds/oink2.wav" id="12_0iluf"]
-[ext_resource type="AudioStream" uid="uid://05qki6htr1km" path="res://Sounds/oink3.wav" id="13_m6ddd"]
-[ext_resource type="AudioStream" uid="uid://dbhfggxb3plcw" path="res://Sounds/oink4.wav" id="14_gyfse"]
-[ext_resource type="AudioStream" uid="uid://cyomk1bwwj21b" path="res://Sounds/oink5.wav" id="15_nd07y"]
-[ext_resource type="AudioStream" uid="uid://dkp2johb8vcnc" path="res://Sounds/oink6.wav" id="16_aqfsr"]
-[ext_resource type="AudioStream" uid="uid://bjgrhwxbgopqr" path="res://Sounds/oink7.wav" id="17_jepk5"]
-[ext_resource type="AudioStream" uid="uid://dvw66ibj15d40" path="res://Sounds/oink8.wav" id="18_bpncy"]
-[ext_resource type="AudioStream" uid="uid://biln2w7msr8jr" path="res://Sounds/oink9.wav" id="19_0t0b6"]
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_svkjy"]
-streams_count = 9
-stream_0/stream = ExtResource("11_8dld1")
-stream_0/weight = 1.0
-stream_1/stream = ExtResource("12_0iluf")
-stream_1/weight = 1.0
-stream_2/stream = ExtResource("13_m6ddd")
-stream_2/weight = 1.0
-stream_3/stream = ExtResource("14_gyfse")
-stream_3/weight = 1.0
-stream_4/stream = ExtResource("15_nd07y")
-stream_4/weight = 1.0
-stream_5/stream = ExtResource("16_aqfsr")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("17_jepk5")
-stream_6/weight = 1.0
-stream_7/stream = ExtResource("18_bpncy")
-stream_7/weight = 1.0
-stream_8/stream = ExtResource("19_0t0b6")
-stream_8/weight = 1.0
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -51,7 +18,7 @@ offset_right = -1.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u54dc")
+script = ExtResource("1_m08ck")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(2.08667, 1.74313)
@@ -90,49 +57,37 @@ anchor_left = 0.111
 anchor_top = 0.641
 anchor_right = 0.873
 anchor_bottom = 0.82
-offset_left = -0.00901794
-offset_top = -0.0750122
+offset_left = -0.00900269
+offset_top = -0.0749512
 offset_right = -1.28711
-offset_bottom = -3.50006
+offset_bottom = -80.5
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="BackButton" type="TextureButton" parent="ButtonContainer"]
+[node name="Back" parent="ButtonContainer" instance=ExtResource("4_cxtsh")]
 layout_mode = 2
-texture_normal = ExtResource("4_7il5n")
-texture_pressed = ExtResource("5_dg8vt")
-texture_hover = ExtResource("6_mbk0b")
-
-[node name="Label" type="Label" parent="ButtonContainer/BackButton"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.985
-anchor_bottom = 0.474
-offset_right = 0.0699768
-offset_bottom = -0.00801086
-theme_override_fonts/font = ExtResource("7_qnuyi")
-theme_override_font_sizes/font_size = 64
-text = "BACK
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "Back"
 
 [node name="TitleBackground" type="Sprite2D" parent="."]
 position = Vector2(982, 377)
 scale = Vector2(2.77064, 2.77064)
 texture = ExtResource("8_03xr4")
 
-[node name="Label" type="Label" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_cv2ek")
+autoplay = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.214
-anchor_top = 0.243
-anchor_right = 0.775
-anchor_bottom = 0.444
-offset_left = 1.33398
-offset_top = 7.77499
-offset_right = -4.22498
-offset_bottom = 0.699982
+anchor_left = 0.206879
+anchor_top = 0.253023
+anchor_right = 0.810318
+anchor_bottom = 0.452093
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ScrollContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("9_a3rwh")
 theme_override_font_sizes/font_size = 54
 text = "\"Farting Around\", \"Holiday Weasel\"
@@ -142,15 +97,4 @@ http://creativecommons.org/licenses/by/3.0/"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("10_cv2ek")
-autoplay = true
-
-[node name="Oinker" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_svkjy")
-bus = &"SFX"
-
-[node name="Music" type="AudioStreamPlayer2D" parent="."]
-bus = &"Music"
-
-[connection signal="pressed" from="ButtonContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/Back" to="." method="_on_back_pressed"]
