@@ -14,6 +14,7 @@ func move_button(label: Label, pressed:bool) -> void:
 
 func _on_start_button_down():
 	move_button(start_label, true)
+	get_tree().change_scene_to_file("res://sky.tscn")
 
 
 func _on_start_button_up():
