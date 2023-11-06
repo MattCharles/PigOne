@@ -10,12 +10,16 @@ var t:=0.0
 @onready var try_again := $"../RetryMenu"
 @onready var score_display : ScoreDisplay = $"../ScoreDisplay"
 @onready var score_bar : ScoreBar = $"../ScoreBar"
+@onready var scoreboard : ScoreBoard = $"../RetryMenu/Scoreboard"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if gameover:
+		return
 	if progress_bar.value <= 0:
 		gameover = true
 		try_again.visible = true
+		scoreboard.add_score(score_display.score)
 		return
 	t+=delta
 	if t >= cooldown:

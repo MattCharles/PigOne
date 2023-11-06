@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=31 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b65mbochgeqv4" path="res://Images/TextBTN_Big_Pressed.png" id="21_vjgjh"]
 [ext_resource type="Texture2D" uid="uid://br33midyugaa5" path="res://Images/ModButton.png" id="22_f8b87"]
 [ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="23_gqjqd"]
+[ext_resource type="PackedScene" uid="uid://gwt6s7gedqg1" path="res://Scenes/scoreboard.tscn" id="25_nur8i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
 shader = ExtResource("2_itwhi")
@@ -276,6 +277,7 @@ text = "TRY AGAIN?"
 horizontal_alignment = 1
 
 [node name="Yeah" type="TextureButton" parent="CanvasLayer/RetryMenu/Control"]
+layout_mode = 0
 offset_left = -245.0
 offset_top = -46.0
 offset_right = 93.0
@@ -297,6 +299,17 @@ theme_override_font_sizes/font_size = 64
 text = "YEAH"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Scoreboard" parent="CanvasLayer/RetryMenu" instance=ExtResource("25_nur8i")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.203
+anchor_right = 0.203
+offset_left = -1547.12
+offset_top = -1.0
+offset_right = -1547.12
+offset_bottom = -1.0
+grow_horizontal = 1
 
 [connection signal="button_down" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_down"]
 [connection signal="button_up" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_button_up"]
