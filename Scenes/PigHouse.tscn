@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3ltmahijxoi1"]
+[gd_scene load_steps=8 format=3 uid="uid://c3ltmahijxoi1"]
 
-[ext_resource type="PackedScene" uid="uid://j1gsw2rkejdm" path="res://Models/pig.glb" id="1_05dhw"]
 [ext_resource type="PackedScene" uid="uid://byqjqdf7m2m4g" path="res://Scenes/Objects/pp_forest_mountain_moss_01.tscn" id="7_bg3ap"]
 [ext_resource type="PackedScene" uid="uid://cprdpgu8u4uux" path="res://Models/Plants/PP_Birch_Tree_05.fbx" id="7_k130k"]
 [ext_resource type="PackedScene" uid="uid://d3a2ac7nshcih" path="res://Models/Planes/ComPlaneV1.fbx" id="8_wox18"]
@@ -10,9 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ciofje48544s7" path="res://Scenes/Objects/PP_Meadow_07.tscn" id="16_wqo0u"]
 
 [node name="Pigpen" type="Node3D"]
-
-[node name="pig" parent="." instance=ExtResource("1_05dhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34615, 1.1, -7.41623)
 
 [node name="PP_Birch_Tree_05" parent="." instance=ExtResource("7_k130k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33331, 0.1, -14.8579)

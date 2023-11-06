@@ -23,4 +23,4 @@ mouse_cursor/custom_image="res://Images/carrotMouse.png"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg")
+enabled=PackedStringArray()
