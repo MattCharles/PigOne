@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c3ltmahijxoi1"]
 
 [ext_resource type="PackedScene" uid="uid://byqjqdf7m2m4g" path="res://Scenes/Objects/pp_forest_mountain_moss_01.tscn" id="7_bg3ap"]
+[ext_resource type="PackedScene" uid="uid://deoxe25rawot0" path="res://Scenes/Objects/com_plane_v_1.tscn" id="7_dgqkx"]
 [ext_resource type="PackedScene" uid="uid://cprdpgu8u4uux" path="res://Models/Plants/PP_Birch_Tree_05.fbx" id="7_k130k"]
-[ext_resource type="PackedScene" uid="uid://d3a2ac7nshcih" path="res://Models/Planes/ComPlaneV1.fbx" id="8_wox18"]
 [ext_resource type="PackedScene" uid="uid://lbj068ufegg7" path="res://Models/Buildings/House1.fbx" id="13_altpp"]
 [ext_resource type="PackedScene" uid="uid://wh83srhacgwl" path="res://Models/Buildings/Planter.fbx" id="14_ydc4o"]
 [ext_resource type="PackedScene" uid="uid://b2eos1p8w2c7a" path="res://Scenes/Objects/fence_type_1.tscn" id="15_ui0d3"]
@@ -85,5 +85,5 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -9.16323, -4.8972, -67.6629)
 [node name="PP_Forest_Mountain_Moss_04" parent="." instance=ExtResource("7_bg3ap")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 42.1383, -14.009, -29.3111)
 
-[node name="ComPlaneV1" parent="." instance=ExtResource("8_wox18")]
-transform = Transform3D(14.7696, -0.379688, 2.59106, 0.1091, 14.9178, 1.56413, -2.61646, -1.52126, 14.6915, -18.0771, 205.457, 8.7304)
+[node name="ComPlaneV2" parent="." instance=ExtResource("7_dgqkx")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -34.0862, 203.447, 0.266579)
