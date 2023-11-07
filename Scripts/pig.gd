@@ -7,4 +7,4 @@ extends Node3D
 func _process(delta):
 	var x = max(1.0, score_display.score / 100)
 	scale = Vector3(x, x, x)
-	pass
+	pass	
