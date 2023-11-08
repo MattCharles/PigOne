@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2eos1p8w2c7a"]
+
+[ext_resource type="PackedScene" uid="uid://byy67mabjlqju" path="res://Models/Buildings/Fences/Fence Type1 01.dae" id="1_c0l3x"]
+[ext_resource type="Material" uid="uid://b3tgoqny6rbbx" path="res://Materials/brownWood.tres" id="2_wesag"]
+
+[node name="Fence Type1 01" instance=ExtResource("1_c0l3x")]
+
+[node name="Fence_Type1_01_mesh" parent="." index="0"]
+material_override = ExtResource("2_wesag")

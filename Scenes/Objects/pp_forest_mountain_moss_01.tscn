@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqjqdf7m2m4g"]
+
+[ext_resource type="PackedScene" uid="uid://bonvhm4cb7w3x" path="res://Models/Plants/PP_Forest_Mountain_Moss_01.fbx" id="1_qgbho"]
+[ext_resource type="Material" uid="uid://s4a18b6a8ahw" path="res://Materials/PP_Standard_Material.tres" id="2_e48ig"]
+
+[node name="PP_Forest_Mountain_Moss_01" instance=ExtResource("1_qgbho")]
+
+[node name="PP_Forest_Mountain_Moss_01" parent="RootNode" index="0"]
+material_override = ExtResource("2_e48ig")
