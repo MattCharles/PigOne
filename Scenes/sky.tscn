@@ -4,8 +4,8 @@
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
 [ext_resource type="Texture2D" uid="uid://bywxftcwg7x3i" path="res://stars.png" id="3_yetut"]
 [ext_resource type="Script" path="res://Scripts/orbit.gd" id="4_8odkc"]
-[ext_resource type="PackedScene" uid="uid://bwywh2x63up6a" path="res://Models/pig.glb" id="4_aumol"]
-[ext_resource type="Script" path="res://Scripts/pigGrowth.gd" id="5_7cp0y"]
+[ext_resource type="PackedScene" uid="uid://4lvukd830ry" path="res://Scenes/pig_with_dance.tscn" id="4_uoq3k"]
+[ext_resource type="Script" path="res://Scripts/pigGrowth.gd" id="5_erx1a"]
 [ext_resource type="Script" path="res://Scripts/yoyo.gd" id="6_i6nqx"]
 [ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
 [ext_resource type="Script" path="res://Scripts/score_bar.gd" id="7_vlgkg"]
@@ -105,9 +105,9 @@ shadow_opacity = 0.25
 shadow_blur = 5.0
 directional_shadow_fade_start = 0.1
 
-[node name="pig" parent="." instance=ExtResource("4_aumol")]
-transform = Transform3D(1, 0, 0, 0, 0.999715, -0.0238564, 0, 0.0238564, 0.999715, 0, 2.5075, 4.73338)
-script = ExtResource("5_7cp0y")
+[node name="pig" parent="." instance=ExtResource("4_uoq3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145031, 2.76845, 4.84687)
+script = ExtResource("5_erx1a")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123978, 3.36633, 4.75784)
