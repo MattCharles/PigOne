@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/options.gd" id="1_fsato"]
 [ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://Images/UI board Large  stone.png" id="2_rxxu8"]
 [ext_resource type="Texture2D" uid="uid://y0u768d3d1ja" path="res://Images/UI board Large  parchment.png" id="3_kpw2x"]
-[ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://Scenes/big_button.tscn" id="4_k8onk"]
 [ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://Images/IRONY TITLE  Large.png" id="5_dv0d8"]
+[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://Fonts/buddychampion.ttf" id="6_a6yu7"]
 [ext_resource type="FontFile" uid="uid://cs63ql10bief" path="res://Fonts/buddychampionrotate.ttf" id="6_d2he0"]
 [ext_resource type="AudioStream" uid="uid://dcjr1dj27vm7c" path="res://Sounds/Music/Holiday Weasel.mp3" id="7_ehgtd"]
 
@@ -50,38 +50,8 @@ position = Vector2(29.7224, 27.6169)
 texture = ExtResource("3_kpw2x")
 centered = false
 
-[node name="ButtonContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.111
-anchor_top = 0.641
-anchor_right = 0.873
-anchor_bottom = 0.82
-offset_left = -0.00900269
-offset_top = -0.0749512
-offset_right = -1.28711
-offset_bottom = -80.5
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Start" parent="ButtonContainer" instance=ExtResource("4_k8onk")]
-layout_mode = 2
-text = "Start"
-
-[node name="Options" parent="ButtonContainer" instance=ExtResource("4_k8onk")]
-layout_mode = 2
-text = "Options"
-
-[node name="Credits" parent="ButtonContainer" instance=ExtResource("4_k8onk")]
-layout_mode = 2
-text = "Credits"
-
-[node name="Quit" parent="ButtonContainer" instance=ExtResource("4_k8onk")]
-layout_mode = 2
-text = "Quit"
-
 [node name="TitleBackground" type="Sprite2D" parent="."]
-position = Vector2(948, 370)
+position = Vector2(948, 270)
 scale = Vector2(2.32569, 2.32569)
 texture = ExtResource("5_dv0d8")
 
@@ -93,21 +63,59 @@ anchor_top = 0.243
 anchor_right = 0.775
 anchor_bottom = 0.444
 offset_left = 1.33398
-offset_top = 7.77499
+offset_top = -92.225
 offset_right = -4.22498
-offset_bottom = 0.699982
+offset_bottom = -99.3
 theme_override_fonts/font = ExtResource("6_d2he0")
 theme_override_font_sizes/font_size = 192
-text = "PIG ONE"
+text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.255341
+anchor_top = 0.387907
+anchor_right = 0.752475
+anchor_bottom = 0.715349
+offset_left = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Option1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/Option1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_a6yu7")
+theme_override_font_sizes/font_size = 124
+text = "Effects
+"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Option1"]
+custom_minimum_size = Vector2(500, 125)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Option2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/Option2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_a6yu7")
+theme_override_font_sizes/font_size = 124
+text = "Music"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Option2"]
+custom_minimum_size = Vector2(500, 125)
+layout_mode = 2
+size_flags_horizontal = 10
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ehgtd")
 autoplay = true
 bus = &"Music"
-
-[connection signal="pressed" from="ButtonContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="ButtonContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="ButtonContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="ButtonContainer/Quit" to="." method="_on_quit_pressed"]
