@@ -2,7 +2,7 @@ extends Node3D
 
 class_name PigGrowth
 
-@export var growth_rate := 0.2
+@export var growth_rate := 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

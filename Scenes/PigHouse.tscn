@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3ltmahijxoi1"]
+[gd_scene load_steps=7 format=3 uid="uid://c3ltmahijxoi1"]
 
 [ext_resource type="PackedScene" uid="uid://byqjqdf7m2m4g" path="res://Scenes/Objects/pp_forest_mountain_moss_01.tscn" id="7_bg3ap"]
 [ext_resource type="PackedScene" uid="uid://deoxe25rawot0" path="res://Scenes/Objects/com_plane_v_1.tscn" id="7_dgqkx"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://lbj068ufegg7" path="res://Models/Buildings/House1.fbx" id="13_altpp"]
 [ext_resource type="PackedScene" uid="uid://wh83srhacgwl" path="res://Models/Buildings/Planter.fbx" id="14_ydc4o"]
 [ext_resource type="PackedScene" uid="uid://b2eos1p8w2c7a" path="res://Scenes/Objects/fence_type_1.tscn" id="15_ui0d3"]
-[ext_resource type="PackedScene" uid="uid://ciofje48544s7" path="res://Scenes/Objects/PP_Meadow_07.tscn" id="16_wqo0u"]
 
 [node name="Pigpen" type="Node3D"]
 
@@ -27,27 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369107, 0, 0.00680542)
 
 [node name="PP_Birch_Tree_07" parent="." instance=ExtResource("7_k130k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9219, 0, -6.28136)
-
-[node name="PP_Meadow_11" parent="." instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3481, -1.61761, 7.64416)
-
-[node name="PP_Meadow_16" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4108, 0.00496995, -0.27931)
-
-[node name="PP_Meadow_15" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0416, 0.00496995, -0.27931)
-
-[node name="PP_Meadow_11" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.393337, -0.11214, -19.3474)
-
-[node name="PP_Meadow_12" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7007, -0.11214, -19.3474)
-
-[node name="PP_Meadow_13" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.8981, -0.11214, -20.3958)
-
-[node name="PP_Meadow_14" parent="PP_Meadow_11" instance=ExtResource("16_wqo0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.4787, -0.11214, -20.3958)
 
 [node name="Fence" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82355, 0, -10.8204)
