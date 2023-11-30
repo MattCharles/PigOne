@@ -340,6 +340,6 @@ transform = Transform3D(0.99771, -0.0614666, 0.0282171, 0.0614421, 0.998109, 0.0
 transform = Transform3D(1000, 0, 0, 0, 782.162, -623.074, 0, 623.074, 782.162, -28.6663, -1000, 0)
 
 [node name="secret" parent="." instance=ExtResource("27_nmoc0")]
-transform = Transform3D(3000, 0, 0, 0, -0.000131134, -3000, 0, 3000, -0.000131134, -210.53, 587.961, 60.5134)
+transform = Transform3D(5000, 0, 0, 0, -0.000218557, -5000, 0, 5000, -0.000218557, -216.167, 1363.4, 127.098)
 
 [connection signal="pressed" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_pressed"]
