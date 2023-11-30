@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bjjceeyq3csc3"]
+[gd_scene load_steps=33 format=3 uid="uid://bjjceeyq3csc3"]
 
 [ext_resource type="Script" path="res://Scripts/sky.gd" id="1_awq8r"]
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ltmahijxoi1" path="res://Scenes/PigHouse.tscn" id="25_qtf8n"]
 [ext_resource type="AudioStream" uid="uid://dxh5fij2g43jk" path="res://Sounds/Music/Farting Around.mp3" id="26_a6jae"]
 [ext_resource type="PackedScene" uid="uid://dmgqvd5c7rlox" path="res://Scenes/LowPolyEarth/lowpoly_earth.tscn" id="26_tt7n1"]
+[ext_resource type="PackedScene" uid="uid://1kitwhonk0w2" path="res://Models/secret.glb" id="27_nmoc0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_msgkm"]
 shader = ExtResource("2_itwhi")
@@ -336,5 +337,8 @@ transform = Transform3D(0.99771, -0.0614666, 0.0282171, 0.0614421, 0.998109, 0.0
 
 [node name="lowpoly_earth" parent="." instance=ExtResource("26_tt7n1")]
 transform = Transform3D(1000, 0, 0, 0, 782.162, -623.074, 0, 623.074, 782.162, -28.6663, -1000, 0)
+
+[node name="secret" parent="." instance=ExtResource("27_nmoc0")]
+transform = Transform3D(5000, 0, 0, 0, -0.000218557, -5000, 0, 5000, -0.000218557, -216.167, 1363.4, 127.098)
 
 [connection signal="pressed" from="CanvasLayer/RetryMenu/Control/Yeah" to="CanvasLayer/RetryMenu" method="_on_yeah_pressed"]
