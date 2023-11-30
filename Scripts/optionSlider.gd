@@ -8,4 +8,6 @@ var busVolume
 func _ready():
 	busIdx = AudioServer.get_bus_index(get_meta("target_bus"))
 	busVolume = AudioServer.get_bus_volume_db(busIdx)
+	print(busIdx)
+	print(busVolume)
 	value = busVolume

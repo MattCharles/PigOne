@@ -113,11 +113,11 @@ autoplay = true
 bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "pulse"
 reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_gngvp")
 }
+autoplay = "pulse"
 
 [node name="Label" type="Label" parent="AnimationPlayer"]
 anchors_preset = -1

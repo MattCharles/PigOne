@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Holiday Weasel.mp3-18e2776ef7a16b35b4b251b9d9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
