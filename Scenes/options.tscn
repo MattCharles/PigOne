@@ -138,9 +138,9 @@ bus = &"Music"
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.379364
+anchor_left = 0.404377
 anchor_top = 0.706047
-anchor_right = 0.555498
+anchor_right = 0.580511
 anchor_bottom = 0.810233
 alignment = 1
 metadata/_edit_use_anchors_ = true
