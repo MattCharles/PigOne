@@ -12,6 +12,7 @@ var previous_t := 0.0
 var max_value := 100.0
 @export var overfeed_penalty := -100.0
 @onready var countdown :Countdown = $"../Countdown"
+@onready var too_full_text = $"../ScoreBar/TooFullText"
 
 func _ready():
 	texture_progress_bar = score_bar.texture_progress_bar as TextureProgressBar
@@ -23,8 +24,10 @@ func _physics_process(delta):
 	if t - previous_t >= update_interval:
 		previous_t = t
 		if texture_progress_bar.value > max_value:
+			too_full_text.visible = true
 			score = score + overfeed_penalty
 		else:
+			too_full_text.visible = false
 			score = score + texture_progress_bar.value
 		score_value.text = str(score)
 

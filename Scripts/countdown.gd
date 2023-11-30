@@ -3,6 +3,7 @@ extends Control
 class_name Countdown
 
 var t:=0.0
+var time_in = 0
 @onready var progress_bar := $ProgressBar
 @onready var progress_label := $Label
 @export var cooldown := 0.1
@@ -11,6 +12,9 @@ var t:=0.0
 @onready var score_display : ScoreDisplay = $"../ScoreDisplay"
 @onready var score_bar : ScoreBar = $"../ScoreBar"
 @onready var scoreboard : ScoreBoard = $"../RetryMenu/Scoreboard"
+@onready var texture_progress_bar = $"../ScoreBar/TextureProgressBar"
+@onready var perfect_text = $"../ScoreBar/PerfectText"
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -22,6 +26,17 @@ func _physics_process(delta):
 		scoreboard.add_score(score_display.score)
 		return
 	t+=delta
+	if texture_progress_bar.value > 79 && texture_progress_bar.value < 100 :
+		perfect_text.visible = true
+		time_in += delta
+		if time_in >= 1:
+			progress_bar.value += 0.9
+			time_in = 0
+	else:
+		perfect_text.visible = false
+		time_in = 0
+		
+	
 	if t >= cooldown:
 		t = 0.0
 		progress_bar.value-=cooldown

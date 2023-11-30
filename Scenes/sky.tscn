@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://sky.gdshader" id="2_itwhi"]
 [ext_resource type="Texture2D" uid="uid://bywxftcwg7x3i" path="res://stars.png" id="3_yetut"]
 [ext_resource type="Script" path="res://Scripts/orbit.gd" id="4_8odkc"]
-[ext_resource type="PackedScene" path="res://Scenes/pig_with_dance.tscn" id="4_uoq3k"]
+[ext_resource type="PackedScene" uid="uid://dp1mfvjt1w00k" path="res://Scenes/pig_with_dance.tscn" id="4_uoq3k"]
 [ext_resource type="Script" path="res://Scripts/pigGrowth.gd" id="5_erx1a"]
 [ext_resource type="Script" path="res://Scripts/yoyo.gd" id="6_i6nqx"]
 [ext_resource type="Texture2D" uid="uid://butflanp1c455" path="res://Images/ProgressBar/BarV7_Bar.png" id="7_1tsh8"]
@@ -147,6 +147,31 @@ nine_patch_stretch = true
 texture_under = ExtResource("7_1tsh8")
 texture_over = ExtResource("8_b4xvj")
 texture_progress = ExtResource("9_2oii2")
+
+[node name="PerfectText" type="Label" parent="CanvasLayer/ScoreBar"]
+modulate = Color(0, 0.670588, 0.0431373, 1)
+layout_mode = 2
+offset_left = 472.5
+offset_top = 55.0
+offset_right = 835.5
+offset_bottom = 143.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 96
+text = "PERFECT !"
+
+[node name="TooFullText" type="Label" parent="CanvasLayer/ScoreBar"]
+modulate = Color(0.85098, 0, 0.0352941, 1)
+layout_mode = 2
+offset_left = 583.5
+offset_top = 77.0
+offset_right = 1064.5
+offset_bottom = 165.0
+rotation = -0.331613
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("12_61d4l")
+theme_override_font_sizes/font_size = 96
+text = "Too Full !!"
 
 [node name="ScoreDisplay" type="Control" parent="CanvasLayer"]
 layout_mode = 3
